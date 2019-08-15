@@ -6,5 +6,3 @@ def my_collect(array)
     end
   expect(counter).to eq(0)
 end
-  
-
