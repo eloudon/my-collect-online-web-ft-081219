@@ -1,8 +1,12 @@
-def my_collect(array)
-  empty_array = []
-  counter = 0
-    my_collect(empty_array) do |x|
-      counter += 1
+
+  def my_collect(array)
+    i = 0
+    name_collection = []
+    while i < array.length
+      name_collection.push yield(array[i])
+      i += 1
     end
-  expect(counter).to eq(0)
-end
+    name_collection
+  end
+
+  my_collect(list) {|i| i.split(" ").first}
